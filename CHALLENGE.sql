@@ -1,19 +1,70 @@
-CREATE DATABASE challenge;
--- Table for Movies
-CREATE TABLE Movies (
-    movie_id INT PRIMARY KEY,
-    title VARCHAR(255),
-    release_year INT,
-    genre VARCHAR(100),
-    director VARCHAR(255)
-);
+/* Question 1 */
+Write an SQL query to retrieve the checkNumber, paymentDate, and amount from the payments table.
 
--- Table for Actors
-CREATE TABLE Actors (
-    actor_id INT PRIMARY KEY,
-    first_name VARCHAR(100),
-    last_name VARCHAR(100),
-    date_of_birth DATE,
-    nationality VARCHAR(100)
-);
+SELECT 
 
+    checkNumber, paymentDate, amount
+
+FROM
+
+    payments;
+
+ 
+
+/* Question 2 */
+
+Write an SQL query to retrieve the orderDate, requiredDate, and status of orders that are currently 'In Process' from the orders table. Sort the results in descending order of orderDate
+
+SELECT 
+
+    orderDate, requiredDate, status
+
+FROM
+
+    orders
+
+WHERE
+
+    status = 'In Process';
+
+ 
+
+/* Question 3 */
+
+SELECT 
+
+    firstName, lastName, email
+
+FROM
+
+    employees
+
+WHERE
+
+    jobTitle = 'Sales Rep'
+
+ORDER BY employeeNumber DESC;
+
+ 
+
+/* Question 4 */
+
+Write a query to retrieve all the columns and records from the offices table.
+
+SELECT * FROM offices;
+
+ 
+
+/* Question 5 */
+
+SELECT 
+
+    productName, quantityInStock
+
+FROM
+
+    products
+
+ORDER BY buyPrice ASC
+
+LIMIT 5;
